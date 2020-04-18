@@ -3,18 +3,18 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'app-age-testing',
   templateUrl: './age-testing.component.html',
-  styleUrls: ['./age-testing.component.sass']
+  styleUrls: ['./age-testing.component.scss']
 })
 export class AgeTestingComponent implements OnInit {
 
-  constructor() { }
+  public age: number
 
-  age: any;
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  verifyAge(){
+  isRetired(){
     if(this.age>65) return true
     else return false
   }

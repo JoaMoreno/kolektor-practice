@@ -1,9 +1,9 @@
-<div>
-    <div *ngIf="this.verifyAge(); else youngStatus">
-        You are old
-    </div>
+<div class="box">
+    <p *ngIf="this.isRetired(); else youngStatus">You are old</p>
     <ng-template #youngStatus>
-        You are young
+        <p>
+            You are young
+        </p>
     </ng-template>
-    <p>Your Age: {{age}}</p>
+    <h2>Your Age: {{age}}</h2>
 </div>

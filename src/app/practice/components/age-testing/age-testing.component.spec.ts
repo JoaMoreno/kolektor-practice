@@ -23,11 +23,23 @@ describe('AgeTestingComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Age verification old', () => {
-    expect(component.verifyAge()).toBeTruthy();
+  it('should be retired', () => {
+    component.age = 66;
+    fixture.detectChanges();
+    expect(component.isRetired()).toBeTrue();
   });
 
-  it('Age verification young', () => {
-    expect(component.verifyAge()).toBeFalse();
+  it('should not be retired', () => {
+    component.age = 48;
+    fixture.detectChanges();
+    expect(component.isRetired()).toBeFalse();
+  });
+
+  it('should have <p> with "banner works!"', () => {
+    component.age = 66;
+    fixture.detectChanges();
+    const bannerElement: HTMLElement = fixture.nativeElement;
+    const div = bannerElement.querySelector('p');
+    expect(div.textContent).toEqual('You are old');
   });
 });

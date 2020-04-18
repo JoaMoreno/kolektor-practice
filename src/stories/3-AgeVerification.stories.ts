@@ -7,16 +7,23 @@ export default {
     title: 'AgeTesting',
     component: AgeTestingComponent,
   };
-
-  export const AgeVerificationOld = () => ({
+  // Hola
+  export const isRetired = () => ({
     component: AgeTestingComponent,
     props: {
       age: '66',
     },
   });
-  export const AgeVerificationYoung = () => ({
+  export const isNotRetired = () => ({
     component: AgeTestingComponent,
     props: {
       age: '65',
+    },
+  });
+  // Hola
+  export const AgeVerificationEmpy = () => ({
+    component: AgeTestingComponent,
+    props: {
+      age: '',
     },
   });

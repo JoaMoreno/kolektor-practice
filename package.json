@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook -w",
     "stubs": "stubby -s 4000 -d stubs/config.json -w"
   },
   "private": true,
@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.1",
+    "@angular-devkit/build-ng-packagr": "~0.901.1",
     "@angular/cli": "~9.1.1",
     "@angular/compiler-cli": "~9.1.1",
     "@angular/language-service": "~9.1.1",
@@ -50,6 +51,7 @@
     "karma-coverage-istanbul-reporter": "~2.1.0",
     "karma-jasmine": "~3.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
+    "ng-packagr": "^9.0.0",
     "protractor": "~5.4.3",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
