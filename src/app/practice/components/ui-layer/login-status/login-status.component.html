@@ -1,6 +1,48 @@
-<div class="container">
-    <div class="container__panel">
-        <p>{{status}}</p>
-        <button><i class="fas fa-sort-down"></i></button>
+<div class="dropdown">
+    <div>
+        <button class="btn btn-outline-info" style="min-width: 200px" type="button" id="dropdownMenuButton"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="ml-2">{{buttonMsgStatus}}</div>
+                <i class="mr-3 far fa-user"></i>
+            </div>
+        </button>
+
+        <div *ngIf="!this.isLogged; else hasLogged" style="min-width: 300px;" class="dropdown-menu"
+            [class.dropdown-menu-right]="rightAligned" aria-labelledby="dropdownMenuButton">
+            <form class="px-4 py-3">
+                <div class="form-group">
+                    <label for="exampleDropdownFormEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleDropdownFormEmail1"
+                        placeholder="email@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="exampleDropdownFormPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleDropdownFormPassword1"
+                        placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                        <label class="form-check-label" for="dropdownCheck">
+                            Remember me
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-block btn-info">Sign in</button>
+                <button type="submit" class="btn btn-block btn-outline-secondary">Sign Up</button>
+            </form>
+        </div>
+
+        <ng-template #hasLogged>
+            <div class="dropdown-menu" style="min-width: 300px;" [class.dropdown-menu-right]="rightAligned"
+                aria-labelledby="dropdownMenuButton">
+                <div *ngFor="let action of actions">
+                    <div *ngIf="action.separatedTop" class="dropdown-divider"></div>
+                    <a class="dropdown-item" [href]=action.goTo>{{action.name}}</a>
+                    <div *ngIf="action.separatedBottom" class="dropdown-divider"></div>
+                </div>
+            </div>
+        </ng-template>
     </div>
 </div>

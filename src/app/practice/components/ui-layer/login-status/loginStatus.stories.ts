@@ -7,23 +7,30 @@ export default {
     component: LoginStatusComponent,
   };
 
-  export const LogIn = () => ({
+  export const isLogged = () => ({
     component: LoginStatusComponent,
     props: {
-      status: 'Loged',
+      isLogged: true,
+      actions: [
+        {name: "Configuration", goTo:"/config", separatedBottom: true},
+        {name: "Other Action", goTo:"#"},
+        {name: "Another Action", goTo:"#"},
+        {name: "Logout", goTo:"#", separatedTop: true}
+      ]
     }, 
   });
-  
-  export const LogOut = () => ({
+
+  export const isGuestUser = () => ({
     component: LoginStatusComponent,
     props: {
-      status: 'unloged',
+      isLogged: false,
     },
   });
 
-  export const Empy = () => ({
+  export const DropdownRight = () => ({
     component: LoginStatusComponent,
     props: {
-      status: '',
+      status: 'Right',
+      rightAligned: true
     },
   });

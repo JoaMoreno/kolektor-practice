@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+interface ActionsI{
+  name: string;
+  goTo: string;
+  separatedTop?: boolean;
+  separatedBottom?: boolean;
+}
 
 @Component({
   selector: 'app-login-status',
@@ -7,11 +14,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginStatusComponent implements OnInit {
 
-  status;
+  @Input() isLogged: boolean;
+  @Input() rightAligned: boolean;
+  @Input() actions: ActionsI[];
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  get buttonMsgStatus(){
+    return this.isLogged
+    ? "Perfil"
+    : "Invitado"
   }
 
 }
