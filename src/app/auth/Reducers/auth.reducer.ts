@@ -1,6 +1,5 @@
 import * as AuthActions from '../Actions/auth.actions'
 import { AuthActionTypes } from '../Actions/auth.actions';
-import { action } from '@storybook/addon-actions';
 
 export interface State {
     user: Array<any>;
