@@ -30,7 +30,20 @@ export default {
   export const DropdownRight = () => ({
     component: LoginStatusComponent,
     props: {
-      status: 'Right',
       rightAligned: true
     },
+  });
+
+  export const isLoggedRigth = () => ({
+    component: LoginStatusComponent,
+    props: {
+      isLogged: true,
+      rightAligned: true,
+      actions: [
+        {name: "Configuration", goTo:"/config", separatedBottom: true},
+        {name: "Other Action", goTo:"#"},
+        {name: "Another Action", goTo:"#"},
+        {name: "Logout", goTo:"#", separatedTop: true}
+      ]
+    }, 
   });
